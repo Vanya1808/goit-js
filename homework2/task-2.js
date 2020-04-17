@@ -28,7 +28,7 @@
 // let test3 = [20, 12, 16, 22, 13, 8, 13, 4, 15, 10, 14, 18, 15, 22];
 
 // for (let a = 0; a < test3.length; a += 1) {
-//   if (test3[a] <= score3) {
+//   if (test3[a] <= scorez) {
 //     continue;
 //   }
 //   console.log(`This score is okey: ${test3[a]}`);  
@@ -42,6 +42,9 @@
 //     [20, 12, 16, 22, 13, 8, 13, 4, 15, 10, 14, 18, 15, 22]
 // ]
 
-// for (let a = 0; a < tests[0].length; a += 1) {
-//     console.log(tests[a]);    
-// }
+// for (let i = 0; i < tests[0].length; i += 1) {
+//     console.log(tests[i]);    
+//  for (let j = 0; j < tests[i].length; j += 1) {
+//    console.log(tests[i][j]);//
+//   }
+//   }
