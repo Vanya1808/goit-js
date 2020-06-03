@@ -9,15 +9,18 @@ const user = {
     premium: true,
 };
 
-const toShowUpdatedUser = function (obj) {
-    user.mood = "happy";
-    user.hobby = "coding";
-    user.premium = "false";
+user.mood = happy;
+user.hobby = coding;
+user.premium = false;
 
+const toShowUpdatedUser = function (obj) {
+  let save = Object.keys(obj);
+  for (let key of save) {
+    console.log(`${key}: ${obj[key]}`);
+  }
 };
 
-toShowUpdatedUser(user);    
-console.log(user);
+toShowUpdatedUser(user);
 
 // 2
 
@@ -32,14 +35,14 @@ console.log(countProps({ name: "Mango", age: 2 })); // 2
 console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 })); // 3
 
 // 3
-function countTotalSalary(employees){
-  let employer = Object.values(employees);
+const countTotalSalary = function (employees) {
   let sum = 0;
-    for (let val of employer) {
-      sum += val;
-    }
-  console.log(sum);
-}
+  let arrayOfValues = Object.values(employees);
+  for (let cal of arrayOfValues) {
+    sum += cal;
+  }
+  return sum;
+};
 
 console.log(
 
@@ -70,3 +73,23 @@ console.log(
   ); // 400
 
 // 4
+const products = [
+  { name: "Радар", price: 1300, quantity: 4 },
+  { name: "Сканер", price: 2700, quantity: 3 },
+  { name: "Дроид", price: 400, quantity: 7 },
+  { name: "Захват", price: 1200, quantity: 2 },
+];
+
+const calculateTotalPrice = function (allProdcuts, productName) {
+let money ;
+for (let i = 0; i < allProdcuts.length; i+= 1) {
+
+  let values = Object.values(allProdcuts[i]);
+        if (values[0] === productName) {
+            money = values[1] * values[2];
+            return money;
+        };
+    };
+
+    console.log(calculateTotalPrice(products, "Радар")); // 5200
+console.log(calculateTotalPrice(products, "Дроид")); // 2800
